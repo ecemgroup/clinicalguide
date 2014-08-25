@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/menu_add_patient"
+        android:orderInCategory="101"
+        android:showAsAction="withText|always"
+        android:title="@string/menu_add_patient"
+    	android:icon="@drawable/social_add_person"/>
+    
+  <!--      <item android:id="@+id/menu_subjectinfo"
+          android:title="@string/menu_subjectinfo"
+          android:icon="@drawable/infosubject_icon"
+          android:showAsAction="ifRoom|collapseActionView"
+          android:actionViewClass="android.widget.EditText" />
+-->
+</menu>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+	android:onClick="onListItemClick" >
+
+    <TextView
+        android:id="@+id/patient_details_lbl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:text="Name:" />
+
+
+    <!-- <FrameLayout
+        android:id="@+id/patient_details_txt_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/patient_details_lbl" /> -->
+    <EditText
+        android:id="@+id/patient_details_txt"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="8dp"
+        android:layout_toRightOf="@+id/patient_details_lbl"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:enabled="true" />
+
+
+<!--     <Button
+        android:id="@+id/patient_details_commit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/patient_details_lbl_gender"
+        android:layout_marginTop="25dp"
+        android:visibility="gone"
+        android:text="Save Patient Details" /> -->
+
+</RelativeLayout>

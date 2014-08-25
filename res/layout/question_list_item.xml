@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+	android:onClick="onListItemClick" >
+    
+	<RelativeLayout
+        android:id="@+id/infoView"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+	    android:background="#E0F0FF" >
+	        
+        <ImageView 
+            android:id="@+id/infoImage"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="250dp"
+        	android:adjustViewBounds="true" />
+        
+        <TextView 
+	        android:id="@+id/infoText"
+	        android:layout_below="@id/infoImage"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="15dp"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content" />
+	    	</RelativeLayout>	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/foregroundContainer"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" 
+	    android:minHeight="50dp" >
+	    
+	    <ImageView
+	        android:id="@+id/infoButton"
+	        android:layout_width="25dp"
+	        android:layout_height="25dp"
+	        android:layout_alignParentLeft="true"
+	        android:layout_centerVertical="true"
+	        android:layout_marginLeft="10dp"
+	        android:adjustViewBounds="true"
+	        android:contentDescription="@string/homescreen_assessment"
+	        android:maxHeight="70dp"
+	        android:maxWidth="50dp"
+	        android:src="@drawable/info" />
+	
+	       
+	    <FrameLayout 
+	        android:id="@+id/answerContainer"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_alignParentRight="true"
+	        android:layout_centerVertical="true"
+	        android:layout_marginRight="5dp" >
+	        
+	    </FrameLayout>	
+	    <TextView
+	        android:id="@+id/question"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_centerVertical="true"
+	        android:layout_toLeftOf="@+id/answerContainer"
+	        android:layout_toRightOf="@+id/infoButton"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginBottom="60dp"
+	        android:layout_marginTop="25dp"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+	</RelativeLayout>
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/infoBackground"
+	    android:layout_width="fill_parent"
+	    android:layout_height="15dp"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignParentRight="true"
+	    android:layout_marginRight="75dp"
+	    android:layout_marginLeft="75dp"
+	    android:layout_marginTop="5dp"
+	    android:background="@drawable/rounded_edges_urgent" >
+
+	<TextView
+	    android:id="@+id/info"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerVertical="true"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp"
+	    android:maxLines="1"
+	    android:text="child must remain calm"
+	    android:textColor="#FFFFFF"
+	    android:textSize="10dp"
+	    android:textStyle="bold|italic" />
+
+	</RelativeLayout>
+
+</RelativeLayout>

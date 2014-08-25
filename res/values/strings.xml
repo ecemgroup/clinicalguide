@@ -1,0 +1,61 @@
+<resources>
+
+    <string name="app_name">ClinicalGuide</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="menu_home">Home</string>
+    <string name="menu_launch_oxicam">Open OxiCam</string>
+    <string name="menu_browse_patients">Browse Patients</string>
+    <string name="menu_add_patient">Add Patient</string>
+    <string name="title_activity_clinical_guide_main">ClinicalGuide</string>
+    <string name="login_button">Login</string>
+    <string name="login_username">Username</string>
+    <string name="login_password">Password</string>
+    <string name="homescreen_assessment">Assessment</string>
+    <string name="homescreen_assessment_description">Start a new assessment</string>
+    <string name="homescreen_item2_title">Follow-Up</string>
+    <string name="homescreen_item2_description">Perform a follow-up for a previous assessment</string>
+    <string name="homescreen_item3_title">Patients</string>
+    <string name="homescreen_item3_description">Add and Edit Patients, browse assessment history</string>
+    <string name="mainsymtopm_cough_title">Cough or Difficult Breathing</string>
+    <string name="mainsymtopm_cough_description"></string>
+    <string name="mainsymptom_fever_title">Fever</string>
+    <string name="mainsymptom_fever_description"></string>
+    <string name="mainsymptom_diahorrea_title">Diahorrea</string>
+    <string name="mainsymptom_diahorrea_description"></string>
+    <string name="mainsymptom_earproblems_title">Ear Problems</string>
+    <string name="mainsymptom_earproblems_description"></string>
+    <string name="register_user">New User</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="add_new_user">Add User</string>
+    <string name="right_arrow">\\uE808</string>
+    <string name="yes">Yes</string>
+    <string name="next">Next</string>
+    <string name="no">No</string>
+    <string name="login">Login</string>
+    <string name="home">Home</string>
+    <string name="followUpNewSymptoms">New assessment?</string>
+    <string name="confirm_treatment">Confirm Start of Treatment for</string>
+    <string name="menu_subjectinfo">subject Info</string>
+    <string name="mainsymptom_TBDOT_title">TB Modified DOT</string>
+    <string name="mainsymptom_TBDOT_description">TB medication compliance record</string>
+    <string name="exportscreen_title">Data Operations</string>
+    <string name="exportscreen_item1_title">Sync Data</string>
+    <string name="exportscreen_item2_title">Backup to Disk</string>
+    <string name="exportscreen_item3_title">Create &amp; Share a Report </string>
+    <string name="exportscreen_item4_title">Calc Statistics</string>
+    <string name="exportscreen_item1_description">Sync data with remote server (disabled)</string>
+    <string name="exportscreen_item2_description">Backup database to file on disk</string>
+    <string name="exportscreen_item3_description">Generate a report based on predifined forms and share with others</string>
+    <string name="exportscreen_item4_description">Query statistics about interventions history</string>
+    <string name="homescreen_item4_title">Data Operations</string>
+    <string name="homescreen_item4_description">Backups, reports, and statistics</string>
+    <string name="followup_history_title">Results from last assessment</string>
+    
+    <string name="patient_edit_del_bt_title">Delete Patient</string>
+    <string name="patient_edit_del_conf_title">Confim delete</string>
+    <string name="patient_edit_del_conf_message">Do you really want to delete this patient and  his/her history?</string>
+    <string name="patient_edit_del_conf_ok">OK</string>
+    <string name="patient_edit_del_conf_cancel">Cancel</string>
+    <string name="patient_edit_hist_bt_title">Browse Patient History</string>
+
+</resources>

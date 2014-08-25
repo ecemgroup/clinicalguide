@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+    
+	<Button 
+	    android:id="@+id/numUp"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_weight="1"
+    	android:text="+" 
+    	 android:textAppearance="?android:attr/textAppearanceLarge"
+    	android:drawableTop="@drawable/navigation_collapse"
+	    /> <!--  -->  
+	
+	<EditText 
+	    android:id="@+id/numText"
+	    android:layout_width="match_parent"
+	    android:layout_height="match_parent"
+	    android:layout_weight="1"
+	    android:inputType="number"
+	 android:text="0" 
+	    />
+	
+	<Button 
+	    android:id="@+id/numDown"
+    	android:layout_width="match_parent"
+    	android:layout_height="match_parent"
+    	android:layout_weight="1"
+    	android:text="-" 
+    	android:textAppearance="?android:attr/textAppearanceLarge"
+    	android:drawableBottom="@drawable/navigation_expand"
+	    /> <!--  android:text="-" --> 
+    
+</LinearLayout>

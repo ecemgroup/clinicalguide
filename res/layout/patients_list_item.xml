@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/patientIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_patient" />
+
+   
+
+    <TextView
+        android:id="@+id/patientName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/patientIcon"
+        android:layout_alignTop="@+id/patientIcon"  
+        android:layout_marginLeft="15dp"    
+        android:text="Name"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+    
+     <TextView
+        android:id="@+id/patientSurname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="5dp"
+        android:layout_alignTop="@+id/patientIcon"
+        android:layout_toRightOf="@+id/patientName"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+		android:text="Surname" />
+     
+     <TextView
+        android:id="@+id/patientAge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/patientSurname"
+        android:layout_alignTop="@+id/patientIcon"   
+        android:text="Age"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+     
+     <TextView
+        android:id="@+id/patientGender"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/patientIcon"
+        android:layout_alignBottom="@+id/patientIcon"     
+        android:layout_marginLeft="15dp"
+        android:text="Gender"
+        android:textColor="#555555"
+        android:textAppearance="?android:attr/textAppearanceSmall" />
+     
+     <TextView
+         android:id="@+id/patientAccessoryView"
+         android:layout_width="wrap_content"
+         android:layout_height="wrap_content"
+         android:layout_toRightOf="@+id/patientIcon"
+         android:layout_alignBottom="@+id/patientIcon"  
+        android:layout_marginRight="10dp"
+         android:layout_marginLeft="10dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+         android:text="\uE75E" />
+
+</RelativeLayout>

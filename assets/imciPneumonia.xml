@@ -1,0 +1,445 @@
+<clinicalguide xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:noNamespaceSchemaLocation="XSD/clinicalguide.xsd">
+	<assesment>
+		<warnings>
+			<warning id="warning0" title="General Danger Signs">
+				A child with any general danger sign needs URGENT attention; complete the assessment and any pre-referral treatment immediately so that referral is not delayed.
+			</warning>
+		</warnings>
+		<patientdetails>
+			<patientattribute id="firstname" name="firstname" value="First Name" answerType="text"/>
+			<patientattribute id="lastname" name="lastname" value="Last Name" answerType="text"/>
+			<patientattribute id="gender" name="gender" value="Gender" answerType="text"/>
+			<patientattribute id="birthdate" name="birthdate" value="Birth Date" answerType="text"/>
+	<!-- 		<patientattribute id="address" name="address" value="Address" answerType="text"/>
+			<patientattribute id="phone" name="phone" value="Phone" answerType="text"/>
+			<patientattribute id="clinic" name="clinic" value="Referral Clinic" answerType="text"/>
+	 -->	</patientdetails>
+		<questions>
+			<question id="question0" answerType="bool">
+				<label>
+					Is the child able to drink or breastfeed?
+				</label>
+				<annotation>
+					<label>
+						Mark no, if the child constantly refused drinking or breastfeeding.
+					</label>
+				</annotation>
+			</question>
+			<question id="question1" answerType="bool" >
+				<label>
+					Does the child vomit everything?
+				</label>
+			</question>
+			<question id="question2" answerType="bool">
+				<label>
+					Has the child had convulsions?
+				</label>
+			</question>
+			<question id="question3" answerType="bool">
+				<label>
+					See if child is lethargic or unconscious.
+				</label>
+			</question>
+			<question id="question4" answerType="bool">
+				<label>
+					Is the child convulsing now?
+				</label>
+			</question>
+			<question id="question5" answerType="quantity" min="0">
+				<label>
+					For how long did the child cough? (days)
+				</label>
+			</question>
+			<question id="question6" answerType="measure" min="0" link="RR">
+				<label>
+					Count the breaths in one minute. (breaths/min)
+				</label>
+				<info type="info">
+					Child must be calm.
+				</info>
+				<annotation>
+					<label>
+						Use link button for launching an external application (needs to be installed on the phone).
+						Use  +/- buttons or tap on field to enter manually.
+					</label>
+				</annotation>
+			</question>
+			<question id="question7" answerType="bool">
+				<label>
+					Look for chest indrawing.
+				</label>
+				<info type="info">
+					Child must be calm.
+				</info>
+				<annotation>
+					<image src="/images/chestindrawing.png"/>
+					<label>Source: WHO IMCI: Caring for Newborns and Children in the Community - Manual for the Community Health Worker
+					    </label>
+				</annotation>
+			</question>
+			<question id="question8" answerType="bool">
+				<label>
+					Look and listen for stridor.
+				</label>
+				<info type="info">
+					Child must be calm.
+				</info>
+			</question>
+			<question id="question9" answerType="bool">
+				<label>
+					Look and listen for wheezing.
+				</label>
+				<info type="info">
+					Child must be calm.
+				</info>
+			</question>
+			<question id="question10" answerType="measure" link="HR">
+				<label>
+					Measure heart rate. (beats/min)
+				</label>
+			</question>
+			<question id="question11" answerType="bool">
+				<label>
+					Is the child breathing slower?
+				</label>
+			</question>
+			<question id="question12" answerType="bool">
+				<label>
+					Is there less fever?
+				</label>
+			</question>
+			<question id="question13" answerType="bool">
+				<label>
+					Is the child eating better?
+				</label>
+			</question>
+
+		</questions>
+		<answers>
+			<!-- does not drink or breastfeed -->
+			<answer id="answer0" for="question0" value="false"/>
+			<!-- vomits everything -->
+			<answer id="answer1" for="question1" value="true"/>
+			<!-- had convulsions -->
+			<answer id="answer2" for="question2" value="true"/>
+			<!-- is lethargic or unconscious -->
+			<answer id="answer3" for="question3" value="true"/>
+			<!-- is convulsing now -->
+			<answer id="answer4" for="question4" value="true"/>
+			<!-- has any general danger sign -->
+			<answer id="answer5">
+				<choice>
+					<answerRef ref="answer0"/>
+					<answerRef ref="answer1"/>
+					<answerRef ref="answer2"/>
+					<answerRef ref="answer3"/>
+					<answerRef ref="answer4"/>
+				</choice>
+			</answer>
+			<!-- has chest indrawing -->
+			<answer id="answer6" for="question7" value="true"/>
+			<!-- has stridor -->
+			<answer id="answer7" for="question8" value="true"/>
+			<!-- has fast breathing if older than 12 months -->
+			<answer id="answer8a" for="question6" value="40" constraint="ge"/>
+			<!-- has fast breathing if younger than 12 months -->
+			<answer id="answer8b" for="question6" value="50" constraint="ge"/>
+			<!-- younger or 12 months old -->
+			<answer id="answer8c" for="birthdate" value="1" constraint="le"/>
+			<!-- younger or 12 months old and has fast breathing -->
+			<answer id="answer8d" >
+				<union>
+					<answerRef ref="answer8c" />
+					<answerRef ref="answer8b" />
+				</union>
+			</answer>
+			<!-- older than 12 months and has fast breathing -->
+			<answer id="answer8e" >
+				<union>
+					<answerRef ref="answer8a" />
+				</union>
+			</answer>
+			<!-- has fast breathing -->
+			<answer id="answer8">
+				<choice>
+					<answerRef ref="answer8d" />
+					<answerRef ref="answer8e" />
+				</choice>
+			</answer>
+			<!-- has signs for severe pneumonia -->
+			<answer id="answer9">
+				<choice>
+					<answerRef ref="answer5"/>
+					<answerRef ref="answer6"/>
+					<answerRef ref="answer7"/>
+				</choice>
+			</answer>
+			<!-- has wheezing -->
+			<answer id="answer10" for="question9" value="true"/>
+			<!-- coughing for more than 3 weeks (21 days) -->
+			<answer id="answer11" for="question5" value="21" constraint="ge"/>
+			<!-- coughing for more than 3 weeks and wheezing -->
+			<answer id="answer12">
+				<union>
+					<answerRef ref="answer10"/>
+					<answerRef ref="answer11"/>
+				</union>
+			</answer>
+			<!-- has chest indrawing or a general danger sign -->
+			<answer id="answer13">
+				<choice>
+					<answerRef ref="answer5" />
+					<answerRef ref="answer6" />
+				</choice>
+			</answer>
+			
+			<!-- has wheeze with fast breathing or with chest indrawing -->
+			<answer id="answer30">
+				<choice>
+					<answerRef ref="answer31"/>
+					<answerRef ref="answer32"/>	
+				</choice>
+			</answer>
+				<!-- has wheeze with fast breathing  -->
+			<answer id="answer31">
+				<union>
+					<answerRef ref="answer10"/>
+					<answerRef ref="answer8"/>
+				</union>
+			</answer>
+				<!-- has wheeze with chest indrawing -->
+			<answer id="answer32">
+				<union>
+					<answerRef ref="answer10"/>
+					<answerRef ref="answer6"/>
+				</union>
+			</answer>
+			
+			<!-- breathing is the same or higher -->
+			<answer id="answer14" for="question11" value="false"/>
+			<!-- breathing slower -->
+			<answer id="answer15" for="question11" value="true"/>
+			<!-- fever is the same or higher -->
+			<answer id="answer16" for="question12" value="false"/>
+			<!-- less fever -->
+			<answer id="answer17" for="question12" value="true"/>
+			<!-- eating is the same -->
+			<answer id="answer18" for="question13" value="false"/>
+			<!-- eating is better -->
+			<answer id="answer19" for="question13" value="true"/>
+			<!-- breathing rate, fever and eating are the same -->
+			<answer id="answer20">
+				<union>
+					<answerRef ref="answer14" />
+					<answerRef ref="answer16" />
+					<answerRef ref="answer18" />
+				</union>
+			</answer>
+			<!-- breathing slower, less fever, or eating better -->
+			<answer id="answer21">
+				<choice>
+					<answerRef ref="answer15" />
+					<answerRef ref="answer17" />
+					<answerRef ref="answer19" />
+				</choice>
+			</answer>
+<!-- older than 5 years	 -->
+			<answer id="answer35" for="birthdate" value="5" constraint="ge"/>
+		</answers>
+		<treatmentActions>
+			<treatmentAction id="treatmentAction0">
+				<label>
+					Give first dose of an appropriate antibiotic.
+				</label>
+				<info type="urgent">
+					Urgent pre-referral treatment.
+				</info>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction1">
+				<label>
+					Refer urgently to hospital.
+				</label>
+				<info type="urgent">
+					Urgent pre-referral treatment.
+				</info>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction2">
+				<label>
+					Give oral antibiotic for 3 days.
+				</label>
+				<info type="urgent">
+					Urgent pre-referral treatment.
+				</info>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction3">
+				<label>
+					If wheezing (even if disappeared after rapidly acting bronchodilator) give an inhaled bronchodilator for 5 days.
+				</label>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction4">
+				<label>
+					Soothe the throat and relieve the cough with safe remedy.
+				</label>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction5">
+				<label>
+					If coughing for more than 3 weeks or if having recurrent wheezing refer for assessment for TB or asthma.
+				</label>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction6">
+				<label>
+					Advise the mother when to return immediately.
+				</label>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction7">
+				<label>
+					Follow-up in 2 days.
+				</label>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction8">
+				<label>
+					Follow-up in 5 days if not improving.
+				</label>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction9">
+				<label>
+					Give a dose of second-line antibiotic or intramuscular chloramphenicol.
+				</label>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction10">
+				<label>
+					Change to the second-line antibiotic and advise mother to return in 2 days or refer.
+					(If the child had measles within the last 3 months, refer.)
+				</label>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction11">
+				<label>
+					Complete the 3 days of antibiotic.
+				</label>
+			</treatmentAction>
+			
+			
+			<treatmentAction id="treatmentAction12">
+				<label>
+					Give a trial of rapid acting inhaled bronchodilator.
+				</label>
+			</treatmentAction>
+			<treatmentAction id="treatmentAction13">
+				<label>
+					Follow-up immediately in 15-20 minutes.
+				</label>
+			</treatmentAction>
+			
+
+		</treatmentActions>
+		
+		<general id="generalQuestionnaires" name="General Danger Signs">
+			<questionnaire id="questionnaire0" type="ask">
+				<questionRef ref="question0"/>
+				<questionRef ref="question1"/>
+				<questionRef ref="question2"/>
+			</questionnaire>
+			<questionnaire id="questionnaire1" type="look">
+				<questionRef ref="question3"/>
+				<questionRef ref="question4"/>
+			</questionnaire>
+			<options>
+				<option ref="answer5" nextId="warning0"/>
+					
+				<option nextId="mainSymptoms"/>
+			</options>
+		</general>
+		<mainsymptoms id="mainSymptoms">
+			<symptom id="task0" name="IMCI Cough or Difficult Breathing" icon="/icons/difficult_breathing.png">
+				<questionnaire id="questionnaire2" type="ask">
+					<questionRef ref="question5"/>
+				</questionnaire>
+				<questionnaire id="questionnaire3" type="look, listen, feel">
+					<questionRef ref="question6"/>
+					<questionRef ref="question7"/>
+					<questionRef ref="question8"/>
+					<questionRef ref="question9"/>
+				</questionnaire>
+				<options>
+				    <option ref="answer30" nextId="treatment6"/>
+					<option ref="answer9" nextId="treatment0"/>
+					<option ref="answer8" nextId="treatment1"/>
+					<option nextId="treatment2"/>
+				</options>
+				<treatments>
+					<treatmentRef ref="treatment0"/>
+					<treatmentRef ref="treatment1"/>
+					<treatmentRef ref="treatment2"/>
+					<treatmentRef ref="treatment6"/>
+				</treatments>
+				<followup>
+					<questionnaires ref="generalQuestionnaires"/>
+					<questionnaires ref="task0"/>
+					<questionnaire id="questionnaire5" type="ask">
+						<questionRef ref="question11" />
+						<questionRef ref="question12" />
+						<questionRef ref="question13" />
+					</questionnaire>
+					<options>
+						<option ref="answer13" nextId="treatment3"/>
+						<option ref="answer20" nextId="treatment4"/>
+						<option nextId="treatment5"/>
+					</options>		
+				</followup>
+			</symptom>
+   			
+			<symptom name="IMCI Fever" id="task1002" icon="/icons/fever.png">
+			</symptom>
+			<symptom name="IMCI Diarrhoea" id="task1001" icon="/icons/diarrhoea.png">
+			</symptom>
+			<symptom name="IMCI Ear Problems" id="task1003" icon="/icons/ear_problems.png">
+			</symptom>
+			<symptom name="IMCI Malnutrition" id="task1004" icon="">
+			</symptom>
+			<symptom name="IMCI Anaemia" id="task1005" icon="">
+			</symptom>
+		
+		</mainsymptoms>
+		<treatments>
+			<treatment id="treatment0" classification="Severe pneumonia or very severe disease">
+				<treatmentActionRef ref="treatmentAction0"/>
+				<treatmentActionRef ref="treatmentAction1"/>
+			</treatment>
+			<treatment id="treatment1" classification="Pneumonia">
+				<treatmentActionRef ref="treatmentAction2"/>
+				<treatmentActionRef ref="treatmentAction3" condition="answer10"/>
+				<treatmentActionRef ref="treatmentAction4"/>
+				<treatmentActionRef ref="treatmentAction5" condition="answer12"/>
+				<treatmentActionRef ref="treatmentAction6"/>
+				<treatmentActionRef ref="treatmentAction7"/>
+			</treatment>
+			<treatment id="treatment6" classification="Wheeze">
+				<treatmentActionRef ref="treatmentAction12"/>
+				<treatmentActionRef ref="treatmentAction13"/>
+			</treatment>
+			<treatment id="treatment2" classification="Cough or cold">
+				<treatmentActionRef ref="treatmentAction3" condition="answer10"/>
+				<treatmentActionRef ref="treatmentAction4"/>
+				<treatmentActionRef ref="treatmentAction5" condition="answer12"/>
+				<treatmentActionRef ref="treatmentAction6"/>
+				<treatmentActionRef ref="treatmentAction8"/>
+			</treatment>
+			<treatment id="treatment3" classification="Follow-up">
+				<treatmentActionRef ref="treatmentAction9"/>
+				<treatmentActionRef ref="treatmentAction1"/>
+			</treatment>
+			<treatment id="treatment4" classification="Follow-up">
+				<treatmentActionRef ref="treatmentAction10"/>
+			</treatment>
+			<treatment id="treatment5" classification="Follow-up">
+				<treatmentActionRef ref="treatmentAction11"/>
+			</treatment>
+			<treatment id="treatment6" classification="Follow-up Wheeze">
+				<treatmentActionRef ref="treatmentAction12"/>
+				<treatmentActionRef ref="treatmentAction13"/>
+			</treatment>
+
+		</treatments>
+	</assesment>
+</clinicalguide>

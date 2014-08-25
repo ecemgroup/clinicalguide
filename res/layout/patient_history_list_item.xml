@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ImageView
+        android:id="@+id/patientIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="15dp"
+        android:src="@drawable/ic_patient" />
+
+    <TextView
+        android:id="@+id/assess"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/patientIcon"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/patientIcon"
+        android:text="Assessment "
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/assessNo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/patientIcon"
+        android:layout_toRightOf="@+id/assess"
+        android:text="1"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/illness"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/patientIcon"
+        android:layout_marginLeft="15dp"
+        android:layout_toRightOf="@+id/patientIcon"
+        android:text="sick"
+        android:textAppearance="?android:attr/textAppearanceSmall"
+        android:textColor="#555555" />
+
+    <TextView
+        android:id="@+id/patientAccessoryView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/patientIcon"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_toRightOf="@+id/patientIcon"
+        android:text="\uE75E"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+</RelativeLayout>

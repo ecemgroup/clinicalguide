@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/itemContainer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+    
+    <TextView 
+        android:id="@+id/infoText"
+        android:visibility="gone"
+        android:background="#FF0000"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="dummy text super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang super lang" />
+	<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	    android:id="@+id/foregroundContainer"
+	    android:background="#FFFFFF"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content" >
+	    
+    <ImageView
+        android:id="@+id/infoButton"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:adjustViewBounds="true"
+        android:contentDescription="@string/homescreen_assessment"
+        android:maxHeight="50dp"
+        android:maxWidth="50dp"
+        android:src="@drawable/info"
+	    android:onClick="onListItemClick" 
+	    android:visibility="invisible" />
+
+
+    <TextView
+        android:id="@+id/treatmentAction"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/treatmentCheckBox"
+        android:layout_toRightOf="@+id/infoButton"
+        android:layout_marginLeft="10dp"
+       	android:layout_marginTop="35dp"
+	    android:layout_marginBottom="35dp"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <CheckBox
+        android:id="@+id/treatmentCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/question"
+        android:layout_alignBottom="@+id/question"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="14dp"
+        android:text="" />
+    
+	</RelativeLayout>
+		<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		android:id="@+id/infoBackground"
+	    android:layout_width="fill_parent"
+	    android:layout_height="15dp"
+	    android:layout_alignParentBottom="true"
+	    android:layout_alignParentRight="true"
+	    android:layout_marginRight="75dp"
+	    android:layout_marginLeft="75dp"
+	    android:background="@drawable/rounded_edges_urgent" >
+
+	<TextView
+	    android:id="@+id/info"
+	    android:layout_width="wrap_content"
+	    android:layout_height="wrap_content"
+	    android:layout_centerVertical="true"
+	    android:layout_marginLeft="10dp"
+	    android:layout_marginRight="10dp"
+	    android:maxLines="1"
+	    android:text="child must remain calm"
+	    android:textColor="#FFFFFF"
+	    android:textSize="10dp"
+	    android:textStyle="bold|italic" />
+
+	</RelativeLayout>
+
+</RelativeLayout>
